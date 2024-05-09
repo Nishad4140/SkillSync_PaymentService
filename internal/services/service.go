@@ -24,8 +24,8 @@ type PaymentService struct {
 }
 
 func NewPaymentService(usecases usecase.PaymentUsecaseInterface) *PaymentService {
-	userConn, _ := grpc.Dial("ss-user-service:4001", grpc.WithInsecure())
-	projectConn, _ := grpc.Dial("ss-project-service:4002", grpc.WithInsecure())
+	userConn, _ := grpc.Dial("user-service:4001", grpc.WithInsecure())
+	projectConn, _ := grpc.Dial("project-service:4002", grpc.WithInsecure())
 	return &PaymentService{
 		usecases:    usecases,
 		UserConn:    pb.NewUserServiceClient(userConn),

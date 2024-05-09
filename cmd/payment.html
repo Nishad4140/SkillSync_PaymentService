@@ -79,12 +79,12 @@
   const orderData = orderid; // Assign the value of orderid to orderData
 
   $.ajax({
-    url: ` http://localhost:4000/payment/verify?user_id=${userid}&payment_ref=${res.razorpay_payment_id}&order_id=${orderData}&signature=${res.razorpay_signature}&id=${orderid}&total=${total}&project_id=${projectId}`,
+    url: ` https://isamecommerce.online/payment/verify?user_id=${userid}&payment_ref=${res.razorpay_payment_id}&order_id=${orderData}&signature=${res.razorpay_signature}&id=${orderid}&total=${total}&project_id=${projectId}`,
     method: 'GET',
     success: (response) => {
       console.log(response);
       if (response.data) {
-        location.href = ' http://localhost:4000/payment/verified';
+        location.href = ' https://isamecommerce.online/payment/verified';
       }
     }
   });
